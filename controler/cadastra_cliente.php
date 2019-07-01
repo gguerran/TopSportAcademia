@@ -11,6 +11,7 @@ include_once '../DAO/classes/pagamento.php';
 $id_usuario = $_GET["user_id"];
 
 $ficha = new ficha;
+
 $ficha->setSegunda($_POST['segunda']);
 $ficha->setTerca($_POST['terca']);
 $ficha->setQuarta($_POST['quarta']);
