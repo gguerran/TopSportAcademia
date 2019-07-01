@@ -51,10 +51,6 @@
                 <div class='form-group col-md-10'>
                     <input type='text' class='form-control' id='sexta' placeholder='Exercícios' required='' name='sexta' value='<?php echo $ficha->sexta?>'>
                 </div>
-                <div class='col-md-2'><p style='text-align: left; color:white;'>Sábado:</p></div>
-                <div class='form-group col-md-10'>
-                    <input type='text' class='form-control' id='sabado' placeholder='Exercícios' required='' name='sabado' value='<?php echo $ficha->sabado?>'>
-                </div>
                 <input type="hidden" name="id_ficha" value="<?php echo $ficha->idficha;?>">
                 <input type="hidden" name="id_cliente" value="<?php echo $_GET["id_cliente"];?>">
                 <div class='col-md-12'>

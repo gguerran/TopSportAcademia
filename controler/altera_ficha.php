@@ -10,7 +10,7 @@ $ficha->setTerca($_POST["terca"]);
 $ficha->setQuarta($_POST["quarta"]);
 $ficha->setQuinta($_POST["quinta"]);
 $ficha->setSexta($_POST["sexta"]);
-$ficha->setSabado($_POST["sabado"]);
+$ficha->setSabado(' ');
 
 $id_cliente = $_POST["id_cliente"];
 

@@ -72,38 +72,65 @@
                     <p style='color:white; text-align: left'>Peso:</p>
                     <input type='number' class='form-control' id='peso' placeholder='Peso' required='' name='peso'>
                 </div>
-                <div class='form-group col-md-3'>
-                    <p style='color:white; text-align: left'>Braço:</p>
-                    <input type='number' class='form-control' id='braco' placeholder='Braço' required='' name='braco'>
-                </div>
-                <div class='form-group col-md-3'>
-                    <p style='color:white; text-align: left'>Antebraço:</p>
-                    <input type='number' class='form-control' id='antebraco' placeholder='Anteraço' required='' name='antebraco'>
-                </div>
-                <div class='form-group col-md-3'>
-                    <p style='color:white; text-align: left'>Pulso:</p>
-                    <input type='number' class='form-control' id='pulso' placeholder='Pulso' required='' name='pulso'>
-                </div>
-                <div class='form-group col-md-3'>
+                <div class='form-group col-md-2'>
                     <p style='color:white; text-align: left'>Peito:</p>
                     <input type='number' class='form-control' id='peito' placeholder='Peito' required='' name='peito'>
                 </div>
-                <div class='form-group col-md-3'>
+                <div class='form-group col-md-2'>
                     <p style='color:white; text-align: left'>Tórax:</p>
                     <input type='number' class='form-control' id='torax' placeholder='Tórax' required='' name='torax'>
                 </div>
-                <div class='form-group col-md-3'>
+                <div class='form-group col-md-2'>
                     <p style='color:white; text-align: left'>Quadril:</p>
                     <input type='number' class='form-control' id='quadril' placeholder='Quadril' required='' name='quadril'>
                 </div>
-                <div class='col-md-3'></div>
                 <div class='form-group col-md-3'>
-                    <p style='color:white; text-align: left'>Coxa:</p>
-                    <input type='number' class='form-control' id='coxa' placeholder='Coxa' required='' name='coxa'>
+                    <p style='color:white; text-align: left'>Braço Dir.:</p>
+                    <input type='number' class='form-control' id='braco' placeholder='Braço Dir.' required='' name='braco_direito'>
                 </div>
                 <div class='form-group col-md-3'>
-                    <p style='color:white; text-align: left'>Panturrilha:</p>
-                    <input type='number' class='form-control' id='panturrilha' placeholder='Panturrilha' required='' name='panturrilha'>
+                    <p style='color:white; text-align: left'>Braço Esq.:</p>
+                    <input type='number' class='form-control' id='braco' placeholder='Braço Esq.' required='' name='braco_esquerdo'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Antebraço Dir.:</p>
+                    <input type='number' class='form-control' id='antebraco' placeholder='Anteraço Dir.' required='' name='antebraco_direito'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Antebraço Esq.:</p>
+                    <input type='number' class='form-control' id='antebraco' placeholder='Anteraço Esq.' required='' name='antebraco_esquerdo'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Pulso Dir.:</p>
+                    <input type='number' class='form-control' id='pulso' placeholder='Pulso Dir.' required='' name='pulso_direito'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Pulso Esq.:</p>
+                    <input type='number' class='form-control' id='pulso' placeholder='Pulso Esq.' required='' name='pulso_esquerdo'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Coxa Dir.:</p>
+                    <input type='number' class='form-control' id='coxa' placeholder='Coxa Dir.' required='' name='coxa_direita'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Coxa Esq.:</p>
+                    <input type='number' class='form-control' id='coxa' placeholder='Coxa Esq.' required='' name='coxa_esquerda'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Panturrilha Dir.:</p>
+                    <input type='number' class='form-control' id='panturrilha' placeholder='Panturrilha Dir.' required='' name='panturrilha_direita'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Panturrilha Esq.:</p>
+                    <input type='number' class='form-control' id='panturrilha' placeholder='Panturrilha Esq.' required='' name='panturrilha_esquerda'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Tornozelo Dir.:</p>
+                    <input type='number' class='form-control' id='tornozelo' placeholder='Tornozelo Dir.' required='' name='tornozelo_direito'>
+                </div>
+                <div class='form-group col-md-3'>
+                    <p style='color:white; text-align: left'>Tornozelo Esq.:</p>
+                    <input type='number' class='form-control' id='tornozelo' placeholder='Tornozelo Esq.' required='' name='tornozelo_esquerdo'>
                 </div>
                 <div class='col-md-12'>
                     <hr>
@@ -129,10 +156,6 @@
                 <div class='col-md-2'><p style='text-align: left; color:white;'>Sexta:</p></div>
                 <div class='form-group col-md-10'>
                     <input type='text' class='form-control' id='sexta' placeholder='Exercícios' required='' name='sexta'>
-                </div>
-                <div class='col-md-2'><p style='text-align: left; color:white;'>Sábado:</p></div>
-                <div class='form-group col-md-10'>
-                    <input type='text' class='form-control' id='sabado' placeholder='Exercícios' required='' name='sabado'>
                 </div>
                 <div class='col-md-12'>
                     <div class='form-group'>

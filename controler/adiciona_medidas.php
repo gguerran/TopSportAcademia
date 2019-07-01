@@ -5,16 +5,23 @@ include_once '../DAO/classes/medidas.php';
 
 $medida = new medidas;
 $medida->setAltura($_POST["altura"]);
-$medida->setAntebraco($_POST["antebraco"]);
-$medida->setBraco($_POST["braco"]);
-$medida->setCoxa($_POST["coxa"]);
+$medida->setAntebraco_direito($_POST["antebraco_direito"]);
+$medida->setAntebraco_esquerdo($_POST["antebraco_esquerdo"]);
+$medida->setBraco_direito($_POST["braco_direito"]);
+$medida->setBraco_esquerdo($_POST["braco_esquerdo"]);
+$medida->setCoxa_direita($_POST["coxa_direita"]);
+$medida->setCoxa_esquerda($_POST["coxa_esquerda"]);
 $medida->setId_cliente($_POST["idcliente"]);
-$medida->setPanturrilha($_POST["panturrilha"]);
+$medida->setPanturrilha_direita($_POST["panturrilha_direita"]);
+$medida->setPanturrilha_esquerda($_POST["panturrilha_esquerda"]);
 $medida->setPeito($_POST["peito"]);
 $medida->setPeso($_POST["peso"]);
-$medida->setPulso($_POST["pulso"]);
+$medida->setPulso_direito($_POST["pulso_direito"]);
+$medida->setPulso_esquerdo($_POST["pulso_esquerdo"]);
 $medida->setQuadril($_POST["quadril"]);
 $medida->setTorax($_POST["torax"]);
+$medida->setTornozelo_direito($_POST["tornozelo_direito"]);
+$medida->setTornozelo_esquerdo($_POST["tornozelo_esquerdo"]);
 
 $result = inserir_medidas($conexao, $medida);
 

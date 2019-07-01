@@ -67,34 +67,60 @@
                             echo 
             "
             <h2 style='color:white'>".$data."</h2>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Altura: ".$row['altura']." cm</h3>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Altura: ".$row['altura']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Peso: ".$row['peso']." Kg</h3>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Peso: ".$row['peso']." Kg</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Braço: ".$row['braco']." cm</h3>
+            <div class='col-md-2'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Peito: ".$row['peito']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Antebraço: ".$row['antebraco']." cm</h3>
+            <div class='col-md-2'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Tórax: ".$row['torax']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Pulso: ".$row['pulso']." cm</h3>
+            <div class='col-md-2'>
+                <h3 style='color:white; font-size:22px; text-align:rigth'>Quadril: ".$row['quadril']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Peito: ".$row['peito']." cm</h3>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Braço Dir.: ".$row['braco_direito']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Tórax: ".$row['torax']." cm</h3>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Braço Esq.: ".$row['braco_esquerdo']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Coxa: ".$row['coxa']." cm</h3>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Antebraço Dir.: ".$row['antebraco_direito']." cm</h3>
             </div>
-            <div class='col-md-4'>
-                <h3 style='color:white; font-size:22px'>Panturrilha: ".$row['panturrilha']." cm</h3>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:right'>Antebraço Esq.: ".$row['antebraco_esquerdo']." cm</h3>
             </div>
-            <hr>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Pulso Dir.: ".$row['pulso_direito']." cm</h3>
+            </div>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Pulso Esq.: ".$row['pulso_esquerdo']." cm</h3>
+            </div>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Coxa Dir.: ".$row['coxa_direita']." cm</h3>
+            </div>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:right'>Coxa Esq.: ".$row['coxa_esquerda']." cm</h3>
+            </div>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Panturrilha Dir.: ".$row['panturrilha_direita']." cm</h3>
+            </div>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Panturrilha Esq.: ".$row['panturrilha_esquerda']." cm</h3>
+            </div>
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:left'>Tornozelo Dir.: ".$row['tornozelo_direito']." cm</h3>
+            </div>
+
+            <div class='col-md-3'>
+                <h3 style='color:white; font-size:22px; text-align:right'>Tornozelo Esq.: ".$row['tornozelo_esquerdo']." cm</h3>
+            </div>
+            <div class='col-md-4'><br></div>
+            <br>
             ";
                         }
                 }
@@ -103,12 +129,13 @@
             }
             echo "
             
-            <div class='col-md-12'>&nbsp;</div>
+            <div class='col-md-12'></div>
             <div class='col-md-12' style='text-align:center'><a class='btn btn-primary' href='form_adc_medidas.php?id_cliente=".$cliente->idcliente."'><i class='fa fa-plus' aria-hidden='true'></i>&ensp;Adicionar Medidas</a></div>
             <div class='col-md-12'>&nbsp;</div>
-            <div class='col-md-12'><hr></div>
+            <div class='col-md-12'><hr>
                 <h1 style='color: white'>Ficha de exercícios</h1>
             <hr>
+            </div>
             <div class='row animate-box'>
 		<div class='col-md-12 text-center'>
                     <ul class='schedule'>
@@ -117,7 +144,6 @@
 			<li><a href='#' data-sched='quarta' style='color: white'>Quarta</a></li>
 			<li><a href='#' data-sched='quinta' style='color: white'>Quinta</a></li>
 			<li><a href='#' data-sched='sexta' style='color: white'>Sexta</a></li>
-			<li><a href='#' data-sched='sabado' style='color: white'>Sábado</a></li>
                     </ul>
 		</div>
 		<div class='row text-center'>
@@ -167,15 +193,6 @@
 				</div>
                             </div>
 			</div>
-			<div class='schedule-content' data-day='sabado'>
-                            <div class='col-md-3'></div>
-                            <div class='col-md-6 col-sm-12'>
-                                <div class='program program-schedule'>
-                                    <img src='images/fit-dumbell.svg' alt='Cycling'>
-                                    <h3>$ficha->sabado</h3>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
