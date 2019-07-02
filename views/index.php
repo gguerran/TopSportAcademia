@@ -51,10 +51,10 @@ include './header.php';
                 <div class="col-md-4 animate-box" style="text-align: center;">
                     <h3 class="section-title" >Contatos:</h3>
                     <ul class="contact-info">
-                        <li><i class="icon-map-marker"></i>Rua projetada 06, Nova Corrente, Corrente-PI</li>
+                        <li><i class="icon-map-marker"></i>Rua Fernando Carlos Cavalcante, 25, Centro, Corrente-PI</li>
                         <li><i class="icon-phone"></i>+55 89 9 9935 1122</li>
                         <li><i class="icon-envelope"></i><a href="#">gustavoguerra.gr@gmail.com</a></li>
-                        <li><i class="icon-globe2"></i><a href="#">www.ctads.com.br/</a></li>
+                        <!---<li><i class="icon-globe2"></i><a href="#">www.ctads.com.br/</a></li>-->
                     </ul>
                 </div>
             </div>

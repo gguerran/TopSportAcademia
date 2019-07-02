@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Jul-2019 às 20:34
+-- Generation Time: 03-Jul-2019 às 01:46
 -- Versão do servidor: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -95,16 +95,23 @@ CREATE TABLE `medidas` (
   `idmedidas` int(11) NOT NULL,
   `altura` int(11) NOT NULL,
   `peso` int(11) NOT NULL,
-  `braco` float NOT NULL,
-  `antebraco` float NOT NULL,
-  `pulso` float NOT NULL,
-  `peito` float NOT NULL,
-  `torax` float NOT NULL,
-  `coxa` float NOT NULL,
-  `quadril` float NOT NULL,
-  `panturrilha` float NOT NULL,
+  `braco_direito` int(11) NOT NULL,
+  `antebraco_direito` int(11) NOT NULL,
+  `pulso_direito` int(11) NOT NULL,
+  `peito` int(11) NOT NULL,
+  `torax` int(11) NOT NULL,
+  `coxa_direita` int(11) NOT NULL,
+  `quadril` int(11) NOT NULL,
+  `panturrilha_direita` int(11) NOT NULL,
   `data_medicao` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `cliente_id` int(11) NOT NULL
+  `cliente_id` int(11) NOT NULL,
+  `braco_esquerdo` int(11) NOT NULL,
+  `antebraco_esquerdo` int(11) NOT NULL,
+  `tornozelo_direito` int(11) NOT NULL,
+  `tornozelo_esquerdo` int(11) NOT NULL,
+  `pulso_esquerdo` int(11) NOT NULL,
+  `coxa_esquerda` int(11) NOT NULL,
+  `panturrilha_esquerda` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

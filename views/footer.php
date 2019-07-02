@@ -1,6 +1,6 @@
 <div class="row copy-right">
 						<div class="col-md-6 col-md-offset-3 text-center">
-                                                    <p>&COPY; Copyright 2019 <a href="http://instagram.com/gr.guerra">ADS MOD III</a>. Todos os Direitos Reservados</p>
+                                                    <p>&COPY; Copyright 2019 <a href="http://instagram.com/gr.guerra">Gustavo R. Guerra</a> Todos os Direitos Reservados</p>
 						</div>
 					</div>
 				</div>

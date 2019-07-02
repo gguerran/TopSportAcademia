@@ -41,7 +41,7 @@
     <div class='container' style='text-align: center; align-items: center;'>
         <div class='col-md-12' style='text-align: left'>
             <hr>
-                <h1 style='color: white'>Informações Pessoais</h1>
+            <h1 style='color: white; text-align:center;'>Informações Pessoais</h1>
             <hr>
             <h3 style='color: white'>Nome: $cliente->nome</h3>
             <h3 style='color: white'>Idade: $idade anos</h3>
@@ -49,11 +49,21 @@
             <h3 style='color: white'>E-mail: $cliente->email</h3>
             <h3 style='color: white'>Objetivo: $cliente->objetivo</h3>
             <div class='col-md-12'>&nbsp;</div>
-            <div class='col-md-12' style='text-align:center'><a class='btn btn-primary' href='form_altera_cliente.php?id_cliente=".$cliente->idcliente."'><i class='fa fa-plus' aria-hidden='true'></i>&ensp;Alterar Dados Pessoais</a></div>
-            <div class='col-md-12'>&nbsp;</div>
-            <hr>
+            <div class='col-md-12' style='text-align:center'>
+                <a class='btn btn-primary' href='form_altera_cliente.php?id_cliente=".$cliente->idcliente."'>
+                    <i class='fa fa-plus' aria-hidden='true'></i>&ensp;Alterar Dados Pessoais
+                </a>
+            </div>
+            <div class='col-md-12'>
+                <br>
+            </div>
+            
+            <div class='col-md-12'>
+                <hr>
                 <h1 style='color: white'>Medidas</h1>
-            <hr>";
+                <hr>
+            </div>
+    ";
             try {
                 $result = lista_medidas($conexao, $cliente->idcliente);
                 if ($result) {
@@ -66,7 +76,11 @@
                             $data = "$dia/$mes/$ano";
                             echo 
             "
-            <h2 style='color:white'>".$data."</h2>
+            <div clas='col-md-12'>
+                <br>
+                <h2 style='color:white; text-align:center;'>&nbsp;".$data."</h2>
+                <hr>
+            </div>
             <div class='col-md-3'>
                 <h3 style='color:white; font-size:22px; text-align:left'>Altura: ".$row['altura']." cm</h3>
             </div>
@@ -80,7 +94,7 @@
                 <h3 style='color:white; font-size:22px; text-align:left'>Tórax: ".$row['torax']." cm</h3>
             </div>
             <div class='col-md-2'>
-                <h3 style='color:white; font-size:22px; text-align:rigth'>Quadril: ".$row['quadril']." cm</h3>
+                <h3 style='color:white; font-size:21px; text-align:rigth'>Quadril: ".$row['quadril']." cm</h3>
             </div>
             <div class='col-md-3'>
                 <h3 style='color:white; font-size:22px; text-align:left'>Braço Dir.: ".$row['braco_direito']." cm</h3>
@@ -115,12 +129,14 @@
             <div class='col-md-3'>
                 <h3 style='color:white; font-size:22px; text-align:left'>Tornozelo Dir.: ".$row['tornozelo_direito']." cm</h3>
             </div>
-
             <div class='col-md-3'>
                 <h3 style='color:white; font-size:22px; text-align:right'>Tornozelo Esq.: ".$row['tornozelo_esquerdo']." cm</h3>
             </div>
-            <div class='col-md-4'><br></div>
             <br>
+            
+            <div class='col-md-12'><hr></div>
+            
+            
             ";
                         }
                 }
@@ -128,13 +144,13 @@
                 print "Erro!: " . $e->getMessage() . "<br>";
             }
             echo "
+            <center>
+                <a class='btn btn-primary' style='text-align:center;' href='form_adc_medidas.php?id_cliente=".$cliente->idcliente."'><i class='fa fa-plus' aria-hidden='true'></i>&ensp;Adicionar Medidas</a>
+            </center>
             
-            <div class='col-md-12'></div>
-            <div class='col-md-12' style='text-align:center'><a class='btn btn-primary' href='form_adc_medidas.php?id_cliente=".$cliente->idcliente."'><i class='fa fa-plus' aria-hidden='true'></i>&ensp;Adicionar Medidas</a></div>
-            <div class='col-md-12'>&nbsp;</div>
             <div class='col-md-12'><hr>
-                <h1 style='color: white'>Ficha de exercícios</h1>
-            <hr>
+                <h1 style='color: white; text-align:center;'>Ficha de exercícios</h1>
+                <hr>
             </div>
             <div class='row animate-box'>
 		<div class='col-md-12 text-center'>
@@ -199,8 +215,7 @@
         </div>
         <div class='col-md-12'>&nbsp;</div>
             <div class='col-md-12' style='text-align:center'><a class='btn btn-primary' href='form_altera_ficha.php?id_ficha=".$cliente->ficha_id."&id_cliente=".$cliente->idcliente."'><i class='fa fa-cog'></i>&ensp;Alterar Ficha</a></div>
-            <div class='col-md-12'>&nbsp;</div>
-            <div class='col-md-12'><hr></div>
+            
         <div class='col-md-2'></div>
         <div class='col-md-12'></div>
     </div>";?>
