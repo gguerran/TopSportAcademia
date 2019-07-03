@@ -54,7 +54,7 @@ include './header.php';
                         <li><i class="icon-map-marker"></i>Rua Fernando Carlos Cavalcante, 25, Centro, Corrente-PI</li>
                         <li><i class="icon-phone"></i>+55 89 9 9935 1122</li>
                         <li><i class="icon-envelope"></i><a href="#">gustavoguerra.gr@gmail.com</a></li>
-                        <!---<li><i class="icon-globe2"></i><a href="#">www.ctads.com.br/</a></li>-->
+                        <li><i class="icon-globe2"></i><a href="#">https://github.com/gguerran</a></li>
                     </ul>
                 </div>
             </div>
