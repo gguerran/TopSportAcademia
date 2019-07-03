@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Jul-2019 às 01:46
+-- Generation Time: 03-Jul-2019 às 21:49
 -- Versão do servidor: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- versão do PHP: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -146,7 +146,8 @@ CREATE TABLE `saida` (
   `idsaida` int(11) NOT NULL,
   `descricao` varchar(70) NOT NULL,
   `valor` float NOT NULL,
-  `data_saida` date NOT NULL
+  `data_saida` date NOT NULL,
+  `id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -243,7 +244,8 @@ ALTER TABLE `pagamento`
 -- Indexes for table `saida`
 --
 ALTER TABLE `saida`
-  ADD PRIMARY KEY (`idsaida`);
+  ADD PRIMARY KEY (`idsaida`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
 -- Indexes for table `usuario`
@@ -352,6 +354,12 @@ ALTER TABLE `medidas`
 ALTER TABLE `pagamento`
   ADD CONSTRAINT `pagamento_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`idusuario`),
   ADD CONSTRAINT `pagamento_ibfk_2` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`idcliente`);
+
+--
+-- Limitadores para a tabela `saida`
+--
+ALTER TABLE `saida`
+  ADD CONSTRAINT `saida_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`idusuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
