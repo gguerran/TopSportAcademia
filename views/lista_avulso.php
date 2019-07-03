@@ -140,6 +140,7 @@ include '../DAO/valoresDAO.php';
                     $data1 = explode("-", $row['data_caixa']);
                     list($ano, $mes, $dia) = $data1;
                     $data = "$dia/$mes/$ano";
+                    echo "<tr>";
                     echo "<td>" . $cont2 . "</td>";
                     echo "<td>" . $row['nome_user'] . "</td>";
                     echo "<td>" . $data . "</td>";

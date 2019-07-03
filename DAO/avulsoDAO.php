@@ -5,7 +5,7 @@
  *
  * @author Gustavo Guerra
  */
-include 'caixaDAO.php';
+
 
 function ultimo_id_avulso($conexao){
     try {
@@ -20,12 +20,6 @@ function ultimo_id_avulso($conexao){
     }
     return $id;
 }
-function inserir_avulso($conexao, $valor, $id_user) {
-    $result = $conexao->exec("INSERT INTO avulso(data_avulso, valor, usuario_id) VALUES (NOW(),{$valor}, {$id_user})");
-    $id_avulso = ultimo_id_avulso($conexao);
-    inserir_caixa_avulso($conexao, $id_avulso, $id_user);
-    return $result;
-}
 
 function lista_avulso($conexao, $data_inicial, $data_final, $nome_usuario){
     try{
@@ -35,4 +29,12 @@ function lista_avulso($conexao, $data_inicial, $data_final, $nome_usuario){
     }
     return $result;
 }
+function inserir_avulso($conexao, $valor, $id_user) {
+    include 'caixaDAO.php';
+    $result = $conexao->exec("INSERT INTO avulso(data_avulso, valor, usuario_id) VALUES (NOW(),{$valor}, {$id_user})");
+    $id_avulso = ultimo_id_avulso($conexao);
+    inserir_caixa_avulso($conexao, $id_avulso, $id_user);
+    return $result;
+}
+
 ?>

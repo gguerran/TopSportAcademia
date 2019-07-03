@@ -127,7 +127,7 @@
                                                 <li><a href='lista_saida.php'>Saída</a></li>
                                                 <li><a href='lista_avulso.php'>Avulsos</a></li>
                                                 <li><a href='lista_pagamento.php'>Pagamentos</a></li>
-                                                <!---<li><a href='lista_financeira.php'>Total</a></li>-->
+                                                <li><a href='lista_financeira.php'>Total</a></li>
                                             </ul>
                                             <li>
                                             <a class='fh5co-sub-ddown'>Usuários</a>

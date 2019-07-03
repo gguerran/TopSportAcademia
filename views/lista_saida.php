@@ -39,6 +39,7 @@ include '../DAO/saidaDAO.php';
                     <div class='col-md-8' >
                         
                             <input type='text' class='form-control' id='nome' placeholder='Descrição' name='descricao'>
+                            <?php echo"<input type='hidden' name='id_usuario' value='".$_SESSION['idusuario']."'>"?>
                              <br>
                         <!--</div>-->
                     </div>
@@ -90,6 +91,7 @@ include '../DAO/saidaDAO.php';
                                     <input type='date' class='form-control' id='nome' placeholder='Data Final' name='data_final'>
                                 </div>
                             </div>
+                            
                             <div class='col-md-12'>
                                 <div class='form-group'>
                                     <button type='submit' class='btn btn-primary'><i class='fa fa-search' aria-hidden='true'></i>&ensp;Buscar</button>
@@ -116,7 +118,7 @@ include '../DAO/saidaDAO.php';
             if (isset($_POST["data_final"]) && $_POST["data_final"] != "") {
                 $fim = $_POST["data_final"];
             }
-            $result = lista_saida_datas($conexao, $inicio, $fim);
+            $result = lista_saida_datas($conexao, $inicio, $fim, "");
             $total = 0;
             if ($result) {
                 $cont2 = 1;

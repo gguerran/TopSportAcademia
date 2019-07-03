@@ -25,7 +25,7 @@ include '../DAO/pagamentoDAO.php';
         <!-- Modal content-->
         <div class='modal-content'>
             <div class='modal-header' style='padding:5px 20px; background-color:#222831; ' >
-                <h2 style='font-size: 20px'>Adicionar Saída</h2>
+                <h2 style='font-size: 20px'>Alterar Mensalidade</h2>
             </div>
             <div class="modal-body" style=" height: 170px">
                 <form id='form-login' action='../controler/altera_mensalidade.php' method='post' role='form' name='formPesquisa' style='text-align: center;'>
@@ -121,7 +121,7 @@ include '../DAO/pagamentoDAO.php';
                             <tbody>";
         try {
             $inicio = "2019-01-01";
-            $fim = date('y-m-d');
+            $fim = date('Y-m-d');
             $usuario = "";
             if (isset($_POST["data_inicial"]) && $_POST["data_inicial"] != "") {
                 $inicio = $_POST["data_inicial"];
@@ -140,6 +140,7 @@ include '../DAO/pagamentoDAO.php';
                     $data1 = explode("-", $row['data_pagamento']);
                     list($ano, $mes, $dia) = $data1;
                     $data = "$dia/$mes/$ano";
+                    echo "<tr>";
                     echo "<td>" . $cont2 . "</td>";
                     echo "<td>" . $row['nome'] . "</td>";
                     echo "<td>" . $row['nome_user'] . "</td>";

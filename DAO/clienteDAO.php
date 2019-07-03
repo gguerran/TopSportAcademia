@@ -6,7 +6,7 @@
  * @author Gustavo Guerra
  */
 function busca_vencimento($conexao) {
-    $result = $conexao->query("SELECT * FROM cliente WHERE DATEDIFF(data_vencimento, NOW())<5");
+    $result = $conexao->query("SELECT * FROM cliente WHERE DATEDIFF(data_vencimento, NOW())<5 ORDER BY data_vencimento ASC");
     return $result;
 }
 

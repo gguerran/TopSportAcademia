@@ -1,9 +1,6 @@
 <?php
 include './header.php';
-include_once '../DAO/Conexao.php';
-include_once '../DAO/pagamentoDAO.php';
-include_once '../DAO/saidaDAO.php';
-include_once '../DAO/avulsoDAO.php';
+include '../DAO/Conexao.php';
 ?>
 
 <div class="fh5co-parallax2" data-stellar-background-ratio="0.5" style='height: 300px'>
@@ -11,14 +8,14 @@ include_once '../DAO/avulsoDAO.php';
     <div class="container">
         <div class="fh5co-intro animate-box" style=" padding-top: 70px; text-align: center">
             <div class='col-md-12'>
-                <h1 class="text-center">Relatório Geral</h1>
-                <br>
+                <h1 class="text-center">Relatórios Totais</h1>
             </div>
             <div class='col-md-4' style='align-items: center'></div>
 
         </div>
     </div>
-</div><!-- end: fh5co-parallax -->
+</div><!-- end: fh5co-parallax -->    
+
 <footer id="footer" style="padding-top: 40px">
     <?php
     if (isset($_GET["resposta"])) {
@@ -36,7 +33,7 @@ include_once '../DAO/avulsoDAO.php';
         echo "<div class='container' style='text-align: left; align-items: center;'>
                     <div class='col-md-2'></div>
                     <div class='col-md-8'>
-                        <form id='form-login' action='lista_pagamento.php' method='post' role='form' name='formPesquisa' style='text-align: center;'>
+                        <form id='form-login' action='lista_financeira.php' method='post' role='form' name='formPesquisa' style='text-align: center;'>
                             
                             <div class='col-md-12'>
                                 <div class='form-group' >
@@ -67,7 +64,7 @@ include_once '../DAO/avulsoDAO.php';
                             <thead>
                                 <tr>
                                     <th scope='col' style='text-align:left;'>#</th>
-                                    <th scope='col' style='text-align:left;'>Cliente</th>
+                                    <th scope='col' style='text-align:left;'>Descrição</th>
                                     <th scope='col' style='text-align:left;'>Usuário</th>
                                     <th scope='col' style='text-align:left;'>Data</th>
                                     <th scope='col' style='text-align:left;'>Valor</th>
@@ -77,7 +74,7 @@ include_once '../DAO/avulsoDAO.php';
                             <tbody>";
         try {
             $inicio = "2019-01-01";
-            $fim = date('y-m-d');
+            $fim = date('Y-m-d');
             $usuario = "";
             if (isset($_POST["data_inicial"]) && $_POST["data_inicial"] != "") {
                 $inicio = $_POST["data_inicial"];
@@ -88,20 +85,19 @@ include_once '../DAO/avulsoDAO.php';
             if (isset($_POST["nome_usuario"]) && $_POST["nome_usuario"] != "") {
                 $usuario = $_POST["nome_usuario"];
             }
-            $result1 = lista_pagamentos($conexao, $inicio, $fim, $usuario);
-            $result2 = lista_avulso($conexao, $inicio, $fim, $usuario);
-            $result3 = lista_saida_datas($conexao, $inicio, $fim, $usuario);
-            
+            include '../DAO/pagamentoDAO.php';
+            $result = lista_pagamentos($conexao, $inicio, $fim, $usuario);
             $total = 0;
-            if ($result1) {
+            if ($result) {
                 $cont2 = 1;
-                foreach ($result1 as $key => $row) {
+                foreach ($result as $key => $row) {
                     $data1 = explode("-", $row['data_pagamento']);
                     list($ano, $mes, $dia) = $data1;
                     $data = "$dia/$mes/$ano";
+                    echo "<tr>";
                     echo "<td>" . $cont2 . "</td>";
-                    echo "<td>" . $row['nome'] . "</td>";
-                    echo "<td>" . $row['nome_user'] . "</td>";
+                    echo "<td> Pag.: " . $row["nome"] . "</td>";
+                    echo "<td>" . $row["nome_user"] . "</td>";
                     echo "<td>" . $data . "</td>";
                     echo "<td>" . $row['valor'] . "</td>";
                     echo "</tr>";
@@ -109,15 +105,55 @@ include_once '../DAO/avulsoDAO.php';
                     $cont2++;
                 }
             }
+            include '../DAO/avulsoDAO.php';
+            $result = lista_avulso($conexao, $inicio, $fim, $usuario);
+            if ($result) {
+                foreach ($result as $key => $row) {
+                    $data1 = explode("-", $row['data_caixa']);
+                    list($ano, $mes, $dia) = $data1;
+                    $data = "$dia/$mes/$ano";
+                    echo "<tr>";
+                    echo "<td>" . $cont2 . "</td>";
+                    echo "<td>Avulso</td>";
+                    echo "<td>" . $row["nome_user"] . "</td>";
+                    echo "<td>" . $data . "</td>";
+                    echo "<td>" . $row['valor'] . "</td>";
+                    echo "</tr>";
+                    $total = $total + $row['valor'];
+                    $cont2++;
+                }
+            }
+            include '../DAO/saidaDAO.php';
+            $result = lista_saida_datas($conexao, $inicio, $fim, $usuario);
+            if ($result) {
+                foreach ($result as $key => $row) {
+                    $data1 = explode("-", $row['data_saida']);
+                    list($ano, $mes, $dia) = $data1;
+                    $data = "$dia/$mes/$ano";
+                    echo "<tr>";
+                    echo "<td>" . $cont2 . "</td>";
+                    echo "<td>". $row["descricao"]."</td>";
+                    echo "<td>".$row["nome_user"]."</td>";
+                    echo "<td>" . $data . "</td>";
+                    echo "<td style='color: red'>" . $row['valor'] . "</td>";
+                    echo "</tr>";
+                    $total = $total - $row['valor'];
+                    $cont2++;
+                }
+            }
+            
         } catch (PDOException $e) {
             print "Erro!: " . $e->getMessage() . "<br>";
         }
+        
+            
+        
 
         echo "
             <tr>
                 <th colspan=4> Total </th>
                 
-                <th> ".$total."
+                <th> " . $total . "
             </tr>
             </tbody>
         </table>
